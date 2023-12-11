@@ -13,78 +13,72 @@
 body{
     background-color: #060517;
     color: #fff;
+    overflow: hidden;
+
 }
 
 .side-area{
     width: 40%;
-    max-width: 900px;
-    display: grid;
-    grid-template-columns: minmax(0, 900px);
-    grid-template-rows: repeat(8, 1fr);
+    max-width: 700px;
     float: left;
 }
 
-.side-area>img{
+.side-area > img{
     width: 100%;
     height: 100vh;
     object-fit: cover;
-    grid-area: 1 / 1 / 9 / 1;
 }
 
 .logo{
-    max-width: 900px;
+    width: 40%;
+    max-width: 700px;
     background-color: #000000b0;
-    grid-area: 2 / 1 / 2 / 1;
+    padding: 10px 20px;
+    position: absolute;
+    top: 20vh;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    gap: 20px;
+    overflow: hidden;
 }
 
-.logo>img{
-    height: 80%;
-    padding: 0 20px;
-}
-
-.logo>p{
+.logo > p{
     font-size: 72px;
     line-height: 60px;
+    text-align: center;
 }
 
-.main-area{
-    width: 60%;
+.main{
+    width: calc(100% - side-area);
     height: 100vh;
-    border-left: solid 3px #000 ;
-    float: left;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 1fr 1fr 2fr 0.5fr;
-}
-
-.main-area>p{
-    font-size: 24px;
-    grid-area: 2 / 1 / 2 / 1;
     padding: 0 50px;
+    border-left: solid 3px #000 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;   
 }
 
-.main-area>form{
-    grid-area: 3 / 1 / 3 / 1;
+.hero{
+    font-size: 24px;
 }
 
 .input-area{
     display: flex;
-    flex-wrap:wrap;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
 
 }
 
 .input-area label{
-    width: 40%;
-    max-width: 600px;
-    padding-top: 20px;
+    width: calc(50% - 30px);
 }
 
 label input{
-    width: 95%;
+    width: 100%;
     height: 32px;
     color: #fff;
     background-color: #0a0826;
@@ -93,7 +87,8 @@ label input{
 
 .button-area{
     width: 100%;
-    padding: 50px 0 0 40px;
+    position: relative;
+    top: 50px;
 }
 
 .button-area>button{
@@ -113,10 +108,11 @@ label input{
 
 form>p{
     font-size: 18px;
-    padding: 50px 0 0 40px;
+    position: relative;
+    top: 70px;
 }
 
-p>a{
+form>p>a{
     color: #a64be2;
     text-decoration: none;
 }
